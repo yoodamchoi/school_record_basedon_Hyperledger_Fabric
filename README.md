@@ -96,23 +96,20 @@ The student transcript record use case aims to solve the following problems in t
 3.	Flexible access control
 To do this, we will create a blockchain system based on Hyperledger Fabric that offers a safe and impenetrable database for archiving and exchanging transcripts. To make sure that only people with permission can access the data, the solution will make use of Fabric's permissioned network paradigm.
 
-Architecture
---------------
+### Architecture
 The solution architecture includes the following components:
 1.	Hyperledger Fabric blockchain network
 2.	Requesting school transcript records smart contract chaincode
 3.	Web-based user interface
 
-Data Model
---------------
+### Data Model
 -	Student name/ID: a identifier for the student
 -	Course name/ID: a identifier for the course
 -	Grades 
 -	Issuer
 -	Timestamp
 
-Chain code
---------------
+### Chain code
 Javascript file that defines a Hyperledger Fabric smart contract called EducationRecord. The contract contains several functions that allows the issuance, verification, sharing, and retrieval of student transcript on blockchain network.
 The EducationRecord class extends the Contract and contains several functions:
 -	issueTranscript: Takes several arguments such as id, studentID, grades, and issuer, and creates a new transcript object with information provided. Then checks if the transaction is already exists on blockchain or not, and stores the transcript on the blockchain using _putTransaction function.
@@ -124,8 +121,7 @@ The EducationRecord class extends the Contract and contains several functions:
 -	_getTranscript: Retrieves a transcript with the specified ID from the blockchain.
 -	_putTranscript: Stores a transcript on the blockchain along with the access policy. It also add personal information to the transaction object.
 
-API
---------------
+### API
 The Fabric Node.js SDK will be used to create the API. It will offer a basic user interface for working with chain code functions.
 
 Front-end
